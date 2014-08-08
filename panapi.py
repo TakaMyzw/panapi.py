@@ -64,10 +64,11 @@ class PANWAPIHandler(object):
 		self.rawdata_op = self._urlfetch()
 		return self.rawdata_op
 
-	def config(self,action,xpath):
+	def config(self,action,xpath,element):
 		self.action = action
 		self.xpath = xpath
-		self.parameters = {'type': 'config', 'action': self.action, 'xpath': self.xpath}
+		self.element = element
+		self.parameters = {'type': 'config', 'action': self.action, 'xpath': self.xpath, 'element': self.element}
 		self.rawdata_config = self._urlfetch()
 		return self.rawdata_config
 
